@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jacenr/gosync"
+	"github.com/hugcoday/gosync"
 )
 
 func main() {
