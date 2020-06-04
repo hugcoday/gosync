@@ -1,12 +1,13 @@
 package gosync
 
 import (
-	"github.com/jacenr/filediff/diff"
 	"os"
 	"regexp"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/jacenr/filediff/diff"
 )
 
 var goTus int
@@ -167,19 +168,19 @@ func hdFileMd5List(mg *Message, gbc *gobConn) {
 	var ret Message
 	var err error
 
-	// 本机无须通过网络同步文件
-	if mg.TaskID == t.Current && t.Status == Running {
-		ret.TaskID = mg.TaskID
-		ret.MgID = mg.MgID
-		ret.MgType = "result"
-		ret.MgString = "The src and dst on the same host."
-		ret.B = false
-		err = gbc.gobConnWt(ret)
-		if err != nil {
-			// *** 记录本地日志 ***
-		}
-		return
-	}
+	// // 本机无须通过网络同步文件
+	// if mg.TaskID == t.Current && t.Status == Running {
+	// 	ret.TaskID = mg.TaskID
+	// 	ret.MgID = mg.MgID
+	// 	ret.MgType = "result"
+	// 	ret.MgString = "The src and dst on the same host."
+	// 	ret.B = false
+	// 	err = gbc.gobConnWt(ret)
+	// 	if err != nil {
+	// 		// *** 记录本地日志 ***
+	// 	}
+	// 	return
+	// }
 
 	t.put(mg.TaskID)
 	DubugInfor(t)
