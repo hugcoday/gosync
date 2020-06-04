@@ -7,7 +7,7 @@ import (
 	"net"
 )
 
-func Client() {
+func Client(targets string, srcpath string, dstpath string) {
 	var overwrite bool
 	var deletion bool
 	var zip bool
@@ -18,12 +18,12 @@ func Client() {
 	var dstpath string
 	flag.StringVar(&lsnHost, "h", "127.0.0.1", "Please tell me the host which is the source host.")
 	flag.StringVar(&lsnPort, "p", "8999", "Please tell me the port of source host.")
-	flag.StringVar(&srcpath, "src", ".", "Please specify the src file or directory path.")
+	// flag.StringVar(&srcpath, "src", ".", "Please specify the src file or directory path.")
 	flag.BoolVar(&overwrite, "o", true, "Whether the modified files will be overwriten.")
-	flag.BoolVar(&deletion, "d", false, "Whether the redundant files will be deleted.")
-	flag.BoolVar(&zip, "z", false, "Whether the redundant files will be compressed.")
-	flag.StringVar(&targets, "t", "", "Please specify the target hosts.")
-	flag.StringVar(&dstpath, "dst", "/tmp", "Please specify the target host dst path.")
+	flag.BoolVar(&deletion, "d", true, "Whether the redundant files will be deleted.")
+	flag.BoolVar(&zip, "z", true, "Whether the redundant files will be compressed.")
+	// flag.StringVar(&targets, "t", "", "Please specify the target hosts.")
+	// flag.StringVar(&dstpath, "dst", "/tmp", "Please specify the target host dst path.")
 	flag.Parse()
 	var userTask = Message{}
 	userTask.MgID = RandId()

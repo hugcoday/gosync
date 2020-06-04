@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	gosync.Client()
+	 gosync.Client()
 }
