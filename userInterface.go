@@ -16,7 +16,7 @@ func Client(lsnHost string, targets string, srcpath string, dstpath string) {
 	var lsnPort string
 	// var srcpath string
 	// var dstpath string
-	flag.StringVar(&lsnHost, "h", "127.0.0.1", "Please tell me the host which is the source host.")
+	// flag.StringVar(&lsnHost, "h", "127.0.0.1", "Please tell me the host which is the source host.")
 	flag.StringVar(&lsnPort, "p", "38999", "Please tell me the port of source host.")
 	// flag.StringVar(&srcpath, "src", ".", "Please specify the src file or directory path.")
 	flag.BoolVar(&overwrite, "o", false, "Whether the modified files will be overwriten.")
