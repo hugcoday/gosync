@@ -7,12 +7,12 @@ import (
 	"net"
 )
 
-func Client(targets string, srcpath string, dstpath string) {
+func Client(lsnHost string, targets string, srcpath string, dstpath string) {
 	var overwrite bool
 	var deletion bool
 	var zip bool
 	// var targets string
-	var lsnHost string
+	// var lsnHost string
 	var lsnPort string
 	// var srcpath string
 	// var dstpath string
