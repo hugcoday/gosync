@@ -35,7 +35,7 @@ func putRetCh(host hostIP, errStr string, retCh chan hostRet) {
 // 启动监控进程, 和各目标host建立连接
 func TravHosts(hosts []string, fileMd5List []string, flMd5 md5s, mg *Message, diffCh chan diffInfo, retCh chan hostRet, taskID string) {
 
-	var port = ":8999"
+	var port = ":38999"
 	for _, host := range hosts {
 		conn, cnErr := net.Dial("tcp", host+port)
 		// 建立连接失败, 即此目标host同步失败
