@@ -3,6 +3,7 @@ package gosync
 import (
 	"bufio"
 	"encoding/gob"
+	"flag"
 
 	// "errors"
 
@@ -60,10 +61,10 @@ func DeamonStart() {
 	var lsnHost string = "127.0.0.1"
 	var lsnPort string = "38999"
 	worker = 10
-	// flag.StringVar(&lsnHost, "h", "127.0.0.1", "Please tell me the host ip which you want listen on.")
-	// flag.StringVar(&lsnPort, "p", "38999", "Please tell me the port which you want listen on.")
-	// flag.IntVar(&worker, "-n", 1, "The worker number.")
-	// flag.Parse()
+	flag.StringVar(&lsnHost, "h", "127.0.0.1", "Please tell me the host ip which you want listen on.")
+	flag.StringVar(&lsnPort, "p", "38999", "Please tell me the port which you want listen on.")
+	flag.IntVar(&worker, "-n", 1, "The worker number.")
+	flag.Parse()
 	svrln, err := net.Listen("tcp", lsnHost+":"+lsnPort)
 	if err != nil {
 		DubugInfor(err)
